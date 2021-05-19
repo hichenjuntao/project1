@@ -38,6 +38,7 @@ class MyMainWindow(QMainWindow, Ui_mainWindow):
                                                 "选取文件夹")
         print(path)
 
+
     def msg(self):
         reply = QMessageBox.information(self, "提示", "这个功能暂时用不到", QMessageBox.Yes | QMessageBox.No ,  QMessageBox.No )
 
