@@ -168,22 +168,6 @@
        </item>
       </layout>
      </widget>
-     <widget class="QPushButton" name="sortButton">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>120</y>
-        <width>141</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="statusTip">
-       <string>获取文件编号</string>
-      </property>
-      <property name="text">
-       <string>文件名分割</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">

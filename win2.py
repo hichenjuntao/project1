@@ -14,7 +14,7 @@ class secondWindow(QMainWindow, Ui_renameWindow):
         self.setWindowIcon(QIcon('./images/cartoon2.ico'))
         self.pathButton.clicked.connect(self.openfile)
         self.readButton.clicked.connect(self.readfile)
-        self.sortButton.clicked.connect(self.check)
+        #self.sortButton.clicked.connect(self.check)
         self.renameButton.clicked.connect(self.msg)
         self.replaceButton.clicked.connect(self.check2)
         tip1='使用方法：\n功能①：选取文件夹以选择文件所在地址→读取文件获取图片→选择需要修改文件格式→输入分隔符和索引位置进行文件名分割获取序号→输入新的ID和分隔符点击按钮完成重命名操作\n当仅输入新ID而不输入分隔符和新名字时，功能转换为简单的图像排序输出'
@@ -74,7 +74,7 @@ class secondWindow(QMainWindow, Ui_renameWindow):
         if self.comboBox.currentText()=='文件格式选择':
             QMessageBox.information(self, "提示", "文件格式还没选择哦", QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         else:
-            self.segmentname()
+            self.rename()
 
     def check2(self):
         # 防止报错闪退
@@ -108,7 +108,7 @@ class secondWindow(QMainWindow, Ui_renameWindow):
              f'请在右侧输入初始ID和分隔符号，图片将会按照 ID+分隔符+编号 格式重新命名'
         self.textBrowser.append(text)
         self.textBrowser.ensureCursorVisible()
-        self.renameButton.setEnabled(True)
+
 
 
 
@@ -136,6 +136,7 @@ class secondWindow(QMainWindow, Ui_renameWindow):
 
     def msg(self):
         # 使用infomation信息框
+        self.segmentname()
         id = self.ID.text()
         newidentifier = self.newidentifier.text()
         nm = self.nname.text()
@@ -145,6 +146,7 @@ class secondWindow(QMainWindow, Ui_renameWindow):
         print(reply,type(reply))
         if reply==QMessageBox.Yes:
             self.textBrowser.append('确认操作')
+
             self.rename()
         else:
             self.textBrowser.append('取消操作')
