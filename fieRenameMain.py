@@ -14,7 +14,6 @@ class fileRenameMain(QMainWindow, Ui_renameWindow):
         self.setWindowIcon(QIcon('./images/cartoon2.ico'))
         self.pathButton.clicked.connect(self.openfile)
         self.readButton.clicked.connect(self.readfile)
-        #self.sortButton.clicked.connect(self.segmentname)
         self.numberPB.clicked.connect(self.renameForNumber)  # 数字
         self.flagPB.clicked.connect(self.renameForFlag)   # 符号替换
         self.saveAsPB.clicked.connect(self.updateSaveFile)
@@ -43,64 +42,6 @@ class fileRenameMain(QMainWindow, Ui_renameWindow):
             if siffix not in allSiffix:
                 allSiffix.append(siffix)
                 self.typeCB.addItem(siffix)
-
-        # global filenames,adress,siffix_key,siffix_values,siffix
-        # #文件读取
-        # adress=[]
-        # self.textBrowser.append('读取文件名称：')
-        # for dirpath, dirnames, filenames in os.walk(self.sourceDir):
-        #     for filename in filenames:
-        #         #self.textBrowser.append(os.path.join(dirpath, filename))
-        #         self.textBrowser.append(filename)
-        #         self.textBrowser.ensureCursorVisible()
-        #         adress.append(os.path.join(dirpath, filename))
-        # self.textBrowser.append(f'读取成功！共读取图片{len(filenames)}张')
-        # text='''分隔符与index填写提示：\n文件110104_5fbdbae0cd2de.jpg，以'_'分割时→['110104','5fbdbae0cd2de']，在index中输入其编号位置i，注意！index从0开始计数\n请根据文件名称输入分隔符和索引位置'''
-        # self.textBrowser.append(text)
-        # print(filenames,type(filenames),len(filenames))
-        # print("adress")
-        # print(adress)
-        # #后缀统计
-        # siffix = []  # 后缀
-        # for p in adress:
-        #     c = os.path.splitext(p)
-        #     siffix.append(c[1])
-        # print('文件后缀')
-        # print(siffix)
-        #
-        # siffix_cnt = {}  # 统计后缀名称，将结果用一个字典存储
-        # # 统计结果
-        # for value in siffix:
-        #     # get(value, num)函数的作用是获取字典中value对应的键值, num=0指示初始值大小。
-        #     siffix_cnt[value] = siffix_cnt.get(value, 0) + 1
-        # # 打印输出结果
-        # siffix_key = [key for key in siffix_cnt.keys()]
-        # siffix_values = [value for value in siffix_cnt.values()]
-        # print(siffix_cnt)
-        # print(siffix_key)
-        # print(siffix_values)
-        # self.comboBox.addItems(siffix_key)#将后缀输出给予选择
-
-
-
-    # def segmentname(self):
-    #     self.names = []
-    #     identifier=self.identifier.text()  #获取分隔符
-    #     #print(identifier,type(identifier))
-    #     index=self.index.text()     #获取索引
-    #     #print(index,type(index))
-    #     # number=[]#存序号
-    #     for name in filenames:
-    #         c=name.split('.')[0]
-    #         s=c.split(identifier)
-    #         self.names.append(s[int(index)])
-    #     print('序号')#转int！！
-    #     print(number)
-    #     #self.textBrowser.clear()
-    #     text=f'分割成功！第一个图像编号为{number[0]},后缀为{siffix[0]} \n' \
-    #          f'请在右侧输入初始ID和分隔符号，图片将会按照 ID+分隔符+编号 格式重新命名'
-    #     self.textBrowser.append(text)
-    #     self.textBrowser.ensureCursorVisible()
 
 
     def renameNumber(self, oldName, oldFlag, oldIndex, begainID):
@@ -151,13 +92,13 @@ class fileRenameMain(QMainWindow, Ui_renameWindow):
             if oldName[i] == oldFlag:
                 if num == oldIndex:
                     newName = oldName[:i] + newFlag + oldName[i+1:len(oldName)]
+                    print(oldName,oldFlag,oldIndex,newFlag,newName)
                     return newName
                 num += 1
         return 'bug'
 
 
     def renameForFlag(self):
-        '''取新ID  新分隔符 组成新地址用于改名'''
         # 使用infomation信息框
         oldFlag = self.identifier.text()
         oldIndex = int(self.index.text())

@@ -3,11 +3,11 @@ import os
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from extractFileUI import Ui_MainWindow
+from extractFileUI import Ui_mainWindow
 import shutil
 
 
-class extractFileMain(QMainWindow, Ui_MainWindow):
+class extractFileMain(QMainWindow, Ui_mainWindow):
     def __init__(self, parent=None):
         super(extractFileMain, self).__init__(parent)
         self.setupUi(self)

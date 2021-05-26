@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>批量提取文件</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="chooseDirButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>10</y>
       <width>93</width>
       <height>28</height>
@@ -32,8 +32,8 @@
      <rect>
       <x>30</x>
       <y>40</y>
-      <width>256</width>
-      <height>192</height>
+      <width>250</width>
+      <height>190</height>
      </rect>
     </property>
    </widget>
@@ -42,8 +42,8 @@
      <rect>
       <x>365</x>
       <y>40</y>
-      <width>261</width>
-      <height>192</height>
+      <width>250</width>
+      <height>190</height>
      </rect>
     </property>
    </widget>
@@ -109,7 +109,7 @@
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>20</y>
+      <y>10</y>
       <width>72</width>
       <height>15</height>
      </rect>
@@ -121,9 +121,9 @@
    <widget class="QPushButton" name="updateFileButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>120</y>
-      <width>51</width>
+      <width>71</width>
       <height>28</height>
      </rect>
     </property>
@@ -135,7 +135,7 @@
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>300</y>
+      <y>280</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -151,7 +151,7 @@
      <x>0</x>
      <y>0</y>
      <width>662</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

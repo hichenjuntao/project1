@@ -13,18 +13,14 @@ class MyMainWindow(QMainWindow, Ui_mainWindow):
     def __init__(self, parent=None):
         super(MyMainWindow, self).__init__(parent)
         self.setupUi(self)
-        self.actionclose.triggered.connect(self.fuc3)
+        self.actionclose.triggered.connect(self.closeMainWin)
         self.renameButton.clicked.connect(self.renameMain)
         self.extractFileButton.clicked.connect(self.extractFileMain)
         self.setWindowIcon(QIcon('./images/cartoon1.ico'))
 
 
 
-    def fuc2(self):
-        print('fuc2')
-        self.textEdit.setPlainText("fuc2")
-
-    def fuc3(self):
+    def closeMainWin(self):
         self.close()
 
 
